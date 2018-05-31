@@ -5,8 +5,10 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +21,7 @@ public class CollapsingToolbarActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
+    private ActionBar mActionBar;
     private List<String> titles = new ArrayList<String>();
     private CollapsingToolbarLayout mCollapsingtoolbar;
 
@@ -55,6 +58,7 @@ public class CollapsingToolbarActivity extends AppCompatActivity {
      */
     private void initEvent() {
         setSupportActionBar(mToolbar);
+        mActionBar = getSupportActionBar();
         mCollapsingtoolbar.setTitle("青春");
         for (int i = 0; i < titles.size(); i++) {
             mTabLayout.addTab(mTabLayout.newTab().setText(titles.get(i)));
